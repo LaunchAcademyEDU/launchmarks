@@ -6,6 +6,12 @@ feature 'user signs up', %Q{
   So that I can author bookmarks
 } do
 
+  # Acceptance Criteria
+  # * I must specify a valid email address
+  # * I must specify a password, and confirm that password
+  # * If I do not perform the above, I get an error message
+  # * If I specify valid information, I register my account and am authenticated
+
   scenario 'user signs up with valid info' do
     visit new_user_registration_path
     fill_in 'Email', with: 'user@example.com'
