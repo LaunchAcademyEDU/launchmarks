@@ -13,8 +13,11 @@ feature 'add a bookmark', %Q{
   # * I can optionally specify a description
   # * Upon complying with the above rules, I receive a confirmation when I've added
   #     a bookmark
+  # * I must be authenticated to add a bookmark
 
   scenario 'add a valid bookmark' do
+    login_as(FactoryGirl.create(:user))
+
     visit new_bookmark_path
 
     page_title = 'Google'
@@ -30,8 +33,15 @@ feature 'add a bookmark', %Q{
   end
 
   scenario 'attempt to add an invalid bookmark' do
+    login_as(FactoryGirl.create(:user))
+
     visit new_bookmark_path
     click_button 'Create Bookmark'
     expect(page).to have_content("can't be blank")
+  end
+
+  scenario 'attempt to add a bookmark without authenticating' do
+    visit new_bookmark_path
+    expect(page).to have_content("You need to sign in")
   end
 end

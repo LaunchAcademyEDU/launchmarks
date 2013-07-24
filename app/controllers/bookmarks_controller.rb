@@ -1,10 +1,13 @@
 class BookmarksController < ApplicationController
+  before_filter :authenticate_user!
+
   def new
     build_resource
   end
 
   def create
-    build_resource
+    @bookmark = build_resource
+    @bookmark.author = current_user
     if @bookmark.save
       flash[:notice] = 'Bookmark saved'
       redirect_to bookmarks_path

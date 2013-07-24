@@ -1,4 +1,9 @@
 class Bookmark < ActiveRecord::Base
+  belongs_to :author,
+    foreign_key: :author_id,
+    class_name: 'User',
+    inverse_of: :bookmarks
+
   validates_presence_of :title
   validates_presence_of :url
 

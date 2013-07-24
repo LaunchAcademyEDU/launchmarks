@@ -37,11 +37,13 @@ end
 group :test, :development do
   gem 'rspec-rails'
   gem 'pry-rails'
+  gem 'shoulda'
 end
 
 group :test do
   gem 'capybara'
   gem 'valid_attribute'
+  gem 'factory_girl_rails'
 end
 
 # Use ActiveModel has_secure_password
