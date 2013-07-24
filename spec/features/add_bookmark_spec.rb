@@ -17,10 +17,21 @@ feature 'add a bookmark', %Q{
   scenario 'add a valid bookmark' do
     visit new_bookmark_path
 
-    fill_in 'Title', with: 'Google'
+    page_title = 'Google'
+
+    fill_in 'Title', with: page_title
     fill_in 'Url', with: 'http://www.google.com'
     fill_in 'Description', with: 'A great search engine'
 
     click_button 'Create Bookmark'
+
+    expect(page).to have_content('Bookmark saved')
+    expect(page).to have_content(page_title)
+  end
+
+  scenario 'attempt to add an invalid bookmark' do
+    visit new_bookmark_path
+    click_button 'Create Bookmark'
+    expect(page).to have_content("can't be blank")
   end
 end

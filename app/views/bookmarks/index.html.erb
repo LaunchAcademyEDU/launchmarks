@@ -1,0 +1,15 @@
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Url</th>
+  </tr>
+
+  <%- @bookmarks.each do |bookmark| -%>
+    <tr>
+      <td><%= bookmark.title %></td>
+      <td><%= bookmark.url %></td>
+    </tr>
+  <%- end -%>
+</table>
+
+<%= paginate @bookmarks %>
