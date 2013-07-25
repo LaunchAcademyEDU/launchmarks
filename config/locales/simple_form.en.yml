@@ -1,4 +1,8 @@
 en:
+  helpers:
+    submit:
+      user:
+        update: 'Update'
   simple_form:
     "yes": 'Yes'
     "no": 'No'

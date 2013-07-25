@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable,
-  # :lockable, :timeoutable and :omniauthable
+  mount_uploader :avatar, AvatarUploader
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -13,4 +12,10 @@ class User < ActiveRecord::Base
   has_many :identities,
     dependent: :destroy,
     inverse_of: :user
+
+  class << self
+    def mass_assignable_attrs
+      [:email, :avatar]
+    end
+  end
 end

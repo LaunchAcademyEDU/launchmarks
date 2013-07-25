@@ -1,6 +1,7 @@
 Launchmarks::Application.routes.draw do
   devise_for :users
   resources :bookmarks
+  resources :users, only: [:edit, :update]
   root 'bookmarks#index'
 
   match '/auth/:provider/callback', to: 'identities#create', via: [:get]
