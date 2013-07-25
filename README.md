@@ -31,6 +31,7 @@ Large items that will be covered, broken down by navpoint:
 * Sending Email
 * Authorization
 * Uploading with Carrierwave
+* API's
 
 ### Echo
 
