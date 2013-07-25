@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Launchazon::Application.load_tasks
+Launchmarks::Application.load_tasks

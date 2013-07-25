@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Launchazon::Application.config.secret_key_base = '4549b9c82136007bfa105f9cb083aa00fb97bb03a12857a5a15205b830fac90dca6484f510b796ce1dd50df4d0c3e711ba7c0ed99817b9a7611186c5b9911f5d'
+Launchmarks::Application.config.secret_key_base = '4549b9c82136007bfa105f9cb083aa00fb97bb03a12857a5a15205b830fac90dca6484f510b796ce1dd50df4d0c3e711ba7c0ed99817b9a7611186c5b9911f5d'

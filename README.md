@@ -1,4 +1,4 @@
-# Launchazon
+# Launchmarks
 
 We will walk through this application to explore what you will learn to become an effective, junior web developer.
 
