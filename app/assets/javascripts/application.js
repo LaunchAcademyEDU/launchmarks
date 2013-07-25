@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require vendor/jquery.2.0.3
+//= require vendor/colorbox.1.4.27
 //= require jquery_ujs
 //= require_tree .
