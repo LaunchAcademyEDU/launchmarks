@@ -25,6 +25,7 @@ gem 'kaminari'
 gem 'simple_form'
 
 gem 'devise'
+gem 'omniauth-facebook'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
@@ -37,10 +38,12 @@ end
 group :test, :development do
   gem 'rspec-rails'
   gem 'pry-rails'
-  gem 'shoulda'
+  gem 'launchy'
+  gem 'dotenv-rails'
 end
 
 group :test do
+  gem 'shoulda'
   gem 'capybara'
   gem 'valid_attribute'
   gem 'factory_girl_rails'

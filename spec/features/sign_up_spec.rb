@@ -34,6 +34,7 @@ feature 'user signs up', %Q{
   end
 
   scenario 'user can sign in via facebook' do
+    stub_auth_registration
     visit new_user_registration_path
     click_link 'Sign In Via Facebook'
     expect(page).to have_content('Welcome! You have signed up successfully.')

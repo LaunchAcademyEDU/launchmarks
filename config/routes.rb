@@ -3,6 +3,8 @@ Launchazon::Application.routes.draw do
   resources :bookmarks
   root 'bookmarks#index'
 
+  match '/auth/:provider/callback', to: 'identities#create', via: [:get]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

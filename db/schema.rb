@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130724184251) do
+ActiveRecord::Schema.define(version: 20130725112550) do
 
   create_table "bookmarks", force: true do |t|
     t.string   "title",       null: false
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 20130724184251) do
   end
 
   add_index "bookmarks", ["author_id"], name: "index_bookmarks_on_author_id"
+
+  create_table "identities", force: true do |t|
+    t.integer  "user_id"
+    t.string   "uid"
+    t.string   "provider"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "identities", ["uid", "provider"], name: "index_identities_on_uid_and_provider", unique: true
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

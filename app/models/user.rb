@@ -10,4 +10,7 @@ class User < ActiveRecord::Base
     dependent: :destroy,
     inverse_of: :author
 
+  has_many :identities,
+    dependent: :destroy,
+    inverse_of: :user
 end
