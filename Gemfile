@@ -42,6 +42,8 @@ group :test, :development do
   gem 'pry-rails'
   gem 'launchy'
   gem 'dotenv-rails'
+  gem 'konacha'
+  gem 'ejs'
 end
 
 group :test do
@@ -50,7 +52,6 @@ group :test do
   gem 'valid_attribute'
   gem 'factory_girl_rails'
 
-  gem 'konacha'
 end
 
 # Use ActiveModel has_secure_password

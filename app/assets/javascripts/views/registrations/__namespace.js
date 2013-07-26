@@ -1,0 +1,1 @@
+window.Launchmarks.Views.Registrations = {};

@@ -11,6 +11,10 @@
 // about supported directives.
 //
 //= require vendor/jquery.2.0.3
-//= require vendor/colorbox.1.4.27
+//= require vendor/reveal
+//= require vendor/underscore.1.5.1
 //= require jquery_ujs
+
+//= require app
+//= require_tree ./views
 //= require_tree .

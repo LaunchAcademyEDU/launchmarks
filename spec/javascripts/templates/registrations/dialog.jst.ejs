@@ -1,0 +1,19 @@
+<div id="registration-dialog" style="display:none">
+  <h2>Sign up</h2>
+
+<form accept-charset="UTF-8" action="/users" class="simple_form user" id="new_user" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="rTsGSNnZBeaIVl8Gf5u17Zcs+9ZXa6+md9pcKZ2uIIg=" /></div>
+
+
+  <div class="form-inputs">
+    <div class="input string email required"><label class="email required" for="user_email"><abbr title="required">*</abbr> Email</label><input autofocus="autofocus" class="string email required" id="user_email" maxlength="255" name="user[email]" required="required" size="50" type="email" value="" /></div>
+    <div class="input string password required"><label class="password required" for="user_password"><abbr title="required">*</abbr> Password</label><input class="string password required" id="user_password" name="user[password]" required="required" size="50" type="password" /></div>
+    <div class="input string password required"><label class="password required" for="user_password_confirmation"><abbr title="required">*</abbr> Password confirmation</label><input class="string password required" id="user_password_confirmation" name="user[password_confirmation]" required="required" size="50" type="password" /></div>
+  </div>
+
+  <div class="form-actions">
+    <input class="button" name="commit" type="submit" value="Sign Up" />
+  </div>
+</form>
+<a href="/auth/facebook">Sign In Via Facebook</a>
+
+</div>

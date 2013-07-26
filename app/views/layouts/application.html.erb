@@ -3,7 +3,6 @@
 <head>
   <title>Launchmarks</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -15,7 +14,7 @@
       <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
     <%- else -%>
       <li><%= link_to 'Sign In', new_user_session_path %></li>
-      <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+      <li><%= link_to 'Sign Up', new_user_registration_path, class: 'sign-up-link' %></li>
     <%- end -%>
   </ul>
 </header>
@@ -30,5 +29,18 @@
 
 <%= yield %>
 
+<%= javascript_include_tag "application" %>
+<div id="registration-dialog">
+  <%= render partial: 'devise/registrations/form' %>
+</div>
+<script type="text/javascript">
+  $(function(){
+    var regDialog = new Launchmarks.Views.Registrations.Dialog({
+      el: $('#registration-dialog'),
+      trigger: $('.sign-up-link')
+    });
+  })
+</script>
+<%= yield :extra_footer %>
 </body>
 </html>
